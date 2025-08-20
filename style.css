@@ -1,60 +1,77 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f6fa;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f8fafc;
+  color: #2d3436;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: #2c3e50;
+  padding: 1rem 1.5rem;
+  background: #1e293b;
   color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-.logo { font-size: 1.2rem; font-weight: bold; }
+
+.logo { font-size: 1.3rem; font-weight: bold; }
 #toggle-btn {
   background: none;
   border: none;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
+  transition: transform 0.2s;
 }
+#toggle-btn:hover { transform: scale(1.1); }
+
 .container {
   display: flex;
   margin-top: 60px;
 }
+
+/* Sidebar */
 .sidebar {
   width: 260px;
-  background: #34495e;
+  background: #334155;
   min-height: 100vh;
   position: fixed;
   top: 60px;
   left: 0;
   padding-top: 1rem;
   transition: width 0.3s;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.15);
 }
 .sidebar nav a {
   display: flex;
   align-items: center;
   padding: 12px 20px;
-  color: #ecf0f1;
+  color: #e2e8f0;
   text-decoration: none;
-  transition: background 0.3s;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  margin: 5px 10px;
+  transition: background 0.3s, color 0.3s;
 }
 .sidebar nav a:hover, .sidebar nav a.active {
-  background: #1abc9c;
+  background: #14b8a6;
+  color: #fff;
 }
 .sidebar nav a i {
-  margin-right: 10px;
+  margin-right: 12px;
+  font-size: 1.2rem;
 }
+
+/* Content */
 .content {
   margin-left: 260px;
-  padding: 20px;
+  padding: 25px;
   flex: 1;
   transition: margin-left 0.3s;
 }
@@ -62,16 +79,16 @@ body {
   background: #fff;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
 /* Collapsed sidebar */
-.sidebar.collapsed {
-  width: 70px;
-}
-.sidebar.collapsed nav a span {
-  display: none;
-}
-.content.collapsed {
-  margin-left: 70px;
-}
+.sidebar.collapsed { width: 70px; }
+.sidebar.collapsed nav a span { display: none; }
+.content.collapsed { margin-left: 70px; }
